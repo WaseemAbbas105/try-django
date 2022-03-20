@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1>This is my first page</h1>
+<h1>{{ title }}</h1>
+<p>{{ contect }}<p>
+<ul>{% for x in article_queryset %}
+        {% if x.title %}
+            <li><a href="/articles/{{x.id}}/">{{x.title}} - {{x.contect}}</a></li>
+        {% endif %}
+    {% endfor %}
+    <ul>
+
+{% endblock content %}
